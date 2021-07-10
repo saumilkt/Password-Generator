@@ -26,10 +26,25 @@ function generatePassword(){
     isChars = true;
   }
 
-  if(isLower) passwordOptions += lowerChars;
-  if(isUpper) passwordOptions += upperChars;
-  if(isNumeric) passwordOptions += numberChars;
-  if(isSpecial) passwordOptions += specialChars;
+  if (isLower) passwordOptions += lowerChars;
+  if (isUpper) passwordOptions += upperChars;
+  if (isNumeric) passwordOptions += numberChars;
+  if (isSpecial) passwordOptions += specialChars;
+
+  var passwordLength = window.prompt("How long should the password be? (8-128 characters)");
+  if (isNaN(passwordLength)) {
+    window.alert("Please enter a number next time.");
+    return;
+  } else if (passwordLength<8 || passwordLength>128) {
+    window.alert("Please enter a password with the correct length next time.");
+    return;
+  }
+  var password = "";
+  for (var i = 0; i < passwordOptions.length; i++) {
+    password += passwordOptions.charAt(Math.floor(Math.random() * passwordOptions.length));
+  }
+
+  return password;
 }
 
 // Get references to the #generate element
