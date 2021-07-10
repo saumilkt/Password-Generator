@@ -40,7 +40,7 @@ function generatePassword(){
     return;
   }
   var password = "";
-  for (var i = 0; i < passwordOptions.length; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     password += passwordOptions.charAt(Math.floor(Math.random() * passwordOptions.length));
   }
 
