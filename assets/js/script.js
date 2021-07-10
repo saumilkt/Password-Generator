@@ -11,10 +11,10 @@ function generatePassword(){
   var passwordOptions = "";
 
   // Querying the user for the types of chars they want in the password and validating that there response is correct
-  var isLower = validateReponse(window.prompt("Include Lowercase Characters? (Type Y/N)"));
-  var isUpper = validateResponse(window.prompt("Include Uppercase Characters? (Type Y/N)"));
-  var isNumeric = validateRespone(window.prompt("Include Numbers? (Type Y/N)"));
-  var isSpecial = validateResponse(window.prompt("Include Special Characters? (Type Y/N)"));
+  var isLower = validateInput(window.prompt("Include Lowercase Characters? (Type Y/N)"));
+  var isUpper = validateInput(window.prompt("Include Uppercase Characters? (Type Y/N)"));
+  var isNumeric = validateInput(window.prompt("Include Numbers? (Type Y/N)"));
+  var isSpecial = validateInput(window.prompt("Include Special Characters? (Type Y/N)"));
 
   // Determining the total viable characters based on user input
   if (isLower) passwordOptions += lowerChars;
