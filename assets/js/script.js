@@ -36,14 +36,22 @@ function generatePassword(){
   if (isNumeric) passwordOptions += numberChars;
   if (isSpecial) passwordOptions += specialChars;
 
+  // Validating that the user has selected at least 1 charset
+  if (passwordOptions.length == 0) {
+    window.alert("Please select at least 1 type of character next time.");
+    location.reload();
+    // stops page from querying the user while reloading the page
+    return;
+  }
+
   // Querying the user for desired password length and validating for correct input
   var passwordLength = window.prompt("How long should the password be? (8-128 characters)");
   if (isNaN(passwordLength)) {
     window.alert("Please enter a number next time.");
-    return;
+    location.reload();
   } else if (passwordLength<8 || passwordLength>128) {
     window.alert("Please enter a password with the correct length next time.");
-    return;
+    location.reload();
   }
 
   // Generating the password based on user supplied length and character types
