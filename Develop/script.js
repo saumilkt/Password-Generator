@@ -18,12 +18,12 @@ function generatePassword(){
 
   var isNumeric;
   if(window.prompt("Include Numbers? (Type Y/N)")=="Y") {
-    isChars = true;
+    isNumeric = true;
   }
 
   var isSpecial;
   if(window.prompt("Include Special Characters? (Type Y/N)")=="Y") {
-    isChars = true;
+    isSpecial = true;
   }
 
   if (isLower) passwordOptions += lowerChars;
