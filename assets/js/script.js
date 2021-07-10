@@ -12,21 +12,21 @@ function generatePassword(){
 
   // Querying the user for the types of chars they want in the password
   var isLower;
-  if(window.prompt("Include Lowercase Characters? (Type Y/N)")=="Y") {
+  if(window.prompt("Include Lowercase Characters? (Type Y for Yes or anything else for No)")=="Y") {
     isLower = true;
   }
   var isUpper;
-  if(window.prompt("Include Uppercase Characters? (Type Y/N)")=="Y") {
+  if(window.prompt("Include Uppercase Characters? (Type Y for Yes or anything else for No)")=="Y") {
     isUpper = true;
   }
 
   var isNumeric;
-  if(window.prompt("Include Numbers? (Type Y/N)")=="Y") {
+  if(window.prompt("Include Numbers? (Type Y for Yes or anything else for No)")=="Y") {
     isNumeric = true;
   }
 
   var isSpecial;
-  if(window.prompt("Include Special Characters? (Type Y/N)")=="Y") {
+  if(window.prompt("Include Special Characters? (Type Y for Yes or anything else for No)")=="Y") {
     isSpecial = true;
   }
 
