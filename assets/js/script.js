@@ -58,6 +58,7 @@ function validateInput(response) {
   } else {
     window.alert("Please type either 'Y' or 'N' next time");
     location.reload();
+    throw "Invalid User Input";
   }
 }
 
