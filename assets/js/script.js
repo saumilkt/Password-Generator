@@ -10,25 +10,11 @@ var specialChars = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 function generatePassword(){
   var passwordOptions = "";
 
-  // Querying the user for the types of chars they want in the password
-  var isLower;
-  if(window.prompt("Include Lowercase Characters? (Type Y for Yes or anything else for No)")=="Y") {
-    isLower = true;
-  }
-  var isUpper;
-  if(window.prompt("Include Uppercase Characters? (Type Y for Yes or anything else for No)")=="Y") {
-    isUpper = true;
-  }
-
-  var isNumeric;
-  if(window.prompt("Include Numbers? (Type Y for Yes or anything else for No)")=="Y") {
-    isNumeric = true;
-  }
-
-  var isSpecial;
-  if(window.prompt("Include Special Characters? (Type Y for Yes or anything else for No)")=="Y") {
-    isSpecial = true;
-  }
+  // Querying the user for the types of chars they want in the password and validating that there response is correct
+  var isLower = validateReponse(window.prompt("Include Lowercase Characters? (Type Y/N)"));
+  var isUpper = validateResponse(window.prompt("Include Uppercase Characters? (Type Y/N)"));
+  var isNumeric = validateRespone(window.prompt("Include Numbers? (Type Y/N)"));
+  var isSpecial = validateResponse(window.prompt("Include Special Characters? (Type Y/N)"));
 
   // Determining the total viable characters based on user input
   if (isLower) passwordOptions += lowerChars;
@@ -61,6 +47,18 @@ function generatePassword(){
   }
 
   return password;
+}
+
+// Checks whether the input is Yes, No, or in error
+function validateInput(response) {
+  if (response == "Y" || response == "y") {
+    return true;
+  } else if (response == "N" || response == "n") {
+    return false;
+  } else {
+    window.alert("Please type either 'Y' or 'N' next time");
+    location.reload();
+  }
 }
 
 // Get references to the #generate element
